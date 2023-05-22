@@ -7,6 +7,8 @@ const strongAttackBtn = document.getElementById('strong-attack-btn');
 const healBtn = document.getElementById('heal-btn');
 const logBtn = document.getElementById('log-btn');
 
+
+// in the function parameters when calling a function.  we can assign variable with initial value instead of hard coded value.
 function adjustHealthBars(maxLife) {
   monsterHealthBar.max = maxLife;
   monsterHealthBar.value = maxLife;

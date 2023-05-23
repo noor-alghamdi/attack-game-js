@@ -16,7 +16,7 @@ function attackHandler(){
 
     if (currentMonsterHealth <= 0){
         alert('you win!')
-    }else {
+    }else if(currentPlayerHealth <= 0){
         alert ('you lose!')
     }
 }

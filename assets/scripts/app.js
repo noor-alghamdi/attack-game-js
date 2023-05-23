@@ -1,5 +1,6 @@
 const PLAYER_ATTACK_VALUE = 10
 const MONSTER_ATTACK_VALUE = 10
+const STRONG_ATTACK = 20
 let chosenMaxLife = 100
 let currentMonsterHealth = chosenMaxLife
 let currentPlayerHealth = chosenMaxLife
@@ -14,11 +15,33 @@ function attackHandler(){
     const monsterDamage = dealPlayerDamage(MONSTER_ATTACK_VALUE)
     currentPlayerHealth -= monsterDamage
 
-    if (currentMonsterHealth <= 0){
+    if (currentMonsterHealth <= 0 && currentPlayerHealth > 0){
         alert('you win!')
-    }else if(currentPlayerHealth <= 0){
+    }else if(currentPlayerHealth <= 0 && currentMonsterHealth > 0){
         alert ('you lose!')
+         
+    } else if ( currentPlayerHealth <= 0 && currentMonsterHealth <= 0){
+        alert('draw!')
     }
 }
 
+function strongAttackHandler(){
+    const playerDamage = dealMonsterDamage(STRONG_ATTACK)
+    currentMonsterHealth -= playerDamage
+
+    const monsterDamage = dealPlayerDamage(STRONG_ATTACK)
+    currentPlayerHealth -= monsterDamage
+
+    if (currentMonsterHealth <= 0 && currentPlayerHealth > 0){
+        alert('you win!')
+    }else if(currentPlayerHealth <= 0 && currentMonsterHealth > 0){
+        alert ('you lose!')
+    } else if ( currentPlayerHealth <= 0 && currentMonsterHealth <= 0){
+        alert('draw!')
+    }
+}
+
+
+
 attackBtn.addEventListener('click',attackHandler)
+strongAttackBtn.addEventListener('click',strongAttackHandler)

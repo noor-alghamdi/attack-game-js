@@ -1,4 +1,5 @@
-const ATTACK_VALUE = 10
+const PLAYER_ATTACK_VALUE = 10
+const MONSTER_ATTACK_VALUE = 10
 let chosenMaxLife = 100
 let currentMonsterHealth = chosenMaxLife
 let currentPlayerHealth = chosenMaxLife
@@ -7,10 +8,16 @@ let currentPlayerHealth = chosenMaxLife
 adjustHealthBars(chosenMaxLife)
 
 function attackHandler(){
-    const damage = dealMonsterDamage(ATTACK_VALUE)
-    currentMonsterHealth -= damage
+    const playerDamage = dealMonsterDamage(PLAYER_ATTACK_VALUE)
+    currentMonsterHealth -= playerDamage
+
+    const monsterDamage = dealPlayerDamage(MONSTER_ATTACK_VALUE)
+    currentPlayerHealth -= monsterDamage
+
     if (currentMonsterHealth <= 0){
         alert('you win!')
+    }else {
+        alert ('you lose!')
     }
 }
 

@@ -1,6 +1,6 @@
 const PLAYER_ATTACK_VALUE = 10
 const MONSTER_ATTACK_VALUE = 10
-const STRONG_ATTACK = 20
+const STRONG_ATTACK = 100
 let chosenMaxLife = 100
 let currentMonsterHealth = chosenMaxLife
 let currentPlayerHealth = chosenMaxLife
@@ -44,4 +44,3 @@ function strongAttackHandler(){
 
 
 attackBtn.addEventListener('click',attackHandler)
-strongAttackBtn.addEventListener('click',strongAttackHandler)

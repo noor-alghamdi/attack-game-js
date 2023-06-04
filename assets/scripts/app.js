@@ -1,6 +1,6 @@
 const PLAYER_ATTACK_VALUE = 30
 const STRONG_ATTACK = 100
-const HEAL_VALUE = 10
+const HEAL_VALUE = 30
 const MONSTER_ATTACK_VALUE = 20
 
 let chosenMaxLife = 100
